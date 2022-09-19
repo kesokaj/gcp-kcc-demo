@@ -1,0 +1,21 @@
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: kcc-demo-svc
+spec:
+  member: serviceAccount:kcc-demo-svc@gcp-asm-crfa-djq8kx.iam.gserviceaccount.com
+  role: roles/owner
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/gcp-asm-crfa-djq8kx
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: gcp-asm-crfa-djq8kx
+  name: kcc-demo-svc
+spec:
+  displayName: KCC Demo Service-account

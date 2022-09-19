@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+requires:
+- configs: []
+  git:
+    repo: git@github.com:kesokaj/gcp-kcc-demo.git
+deploy:
+  kubectl:
+    manifests:
+      - 1-kcc*
+      - 2-kcc*
+      - 3-kcc*

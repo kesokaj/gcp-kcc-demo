@@ -1,0 +1,50 @@
+---
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageBucket
+metadata:
+  annotations:
+    cnrm.cloud.google.com/force-destroy: "true"
+  name: gcp-asm-crfa-djq8kx-kcc-demo
+spec:
+  versioning:
+    enabled: true
+  uniformBucketLevelAccess: true
+  location: eu
+---
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageBucketAccessControl
+metadata:
+  name: bucket-acl
+spec:
+  bucketRef:
+    name: gcp-asm-crfa-djq8kx-kcc-demo
+  entity: allAuthenticatedUsers
+  role: READER  
+---
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageNotification
+metadata:
+  name: bucket-to-pubsub
+spec:
+  bucketRef:
+    name: gcp-asm-crfa-djq8kx-kcc-demo
+  payloadFormat: JSON_API_V1
+  topicRef:
+    name: pubsub-kcc-demo
+  eventTypes:
+    - "OBJECT_ARCHIVE"
+    - "OBJECT_DELETE"
+    - "OBJECT_FINALIZE"
+    - "OBJECT_METADATA_UPDATE"
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: bucket-to-pubsub-policy
+spec:
+  member: serviceAccount:service-799303310923@gs-project-accounts.iam.gserviceaccount.com
+  role: roles/pubsub.publisher
+  resourceRef:
+    apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
+    kind: PubSubTopic
+    name: pubsub-kcc-demo  

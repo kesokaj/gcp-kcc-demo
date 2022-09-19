@@ -1,0 +1,18 @@
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+ name: kcc-demo-pipeline
+description: main
+serialPipeline:
+ stages:
+ - targetId: qsprod
+   profiles: []
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+ name: qsprod
+description: production cluster
+gke:
+ cluster: projects/gcp-asm-crfa-djq8kx/locations/europe-north1/clusters/gcp-asm-crfa-djq8kx
