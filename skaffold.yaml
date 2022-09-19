@@ -3,10 +3,11 @@ kind: Config
 requires:
 - configs: []
   git:
-    repo: git@github.com:kesokaj/gcp-kcc-demo.git
+    repo: https://github.com/kesokaj/gcp-kcc-demo.git
+    path: /skaffold.yaml
+    ref: master
+    sync: true
 deploy:
   kubectl:
     manifests:
-      - 1-kcc*
-      - 2-kcc*
-      - 3-kcc*
+      - k8s/*.yaml
