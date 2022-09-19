@@ -3,6 +3,7 @@ apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
   name: kcc-demo-svc
+  namespace: kcc-deploy
 spec:
   member: serviceAccount:kcc-demo-svc@gcp-asm-crfa-djq8kx.iam.gserviceaccount.com
   role: roles/owner
@@ -17,5 +18,6 @@ metadata:
   annotations:
     cnrm.cloud.google.com/project-id: gcp-asm-crfa-djq8kx
   name: kcc-demo-svc
+  namespace: kcc-deploy
 spec:
   displayName: KCC Demo Service-account

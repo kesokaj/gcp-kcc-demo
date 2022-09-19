@@ -5,6 +5,7 @@ metadata:
   annotations:
     cnrm.cloud.google.com/force-destroy: "true"
   name: gcp-asm-crfa-djq8kx-kcc-demo
+  namespace: kcc-deploy
 spec:
   versioning:
     enabled: true
@@ -15,6 +16,7 @@ apiVersion: storage.cnrm.cloud.google.com/v1beta1
 kind: StorageBucketAccessControl
 metadata:
   name: bucket-acl
+  namespace: kcc-deploy
 spec:
   bucketRef:
     name: gcp-asm-crfa-djq8kx-kcc-demo
@@ -25,6 +27,7 @@ apiVersion: storage.cnrm.cloud.google.com/v1beta1
 kind: StorageNotification
 metadata:
   name: bucket-to-pubsub
+  namespace: kcc-deploy
 spec:
   bucketRef:
     name: gcp-asm-crfa-djq8kx-kcc-demo
@@ -41,6 +44,7 @@ apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
   name: bucket-to-pubsub-policy
+  namespace: kcc-deploy
 spec:
   member: serviceAccount:service-799303310923@gs-project-accounts.iam.gserviceaccount.com
   role: roles/pubsub.publisher

@@ -3,11 +3,13 @@ apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubTopic
 metadata:
   name: pubsub-kcc-demo
+  namespace: kcc-deploy
 ---
 apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubSubscription
 metadata:
   name: pubsub-kcc-demo-sub
+  namespace: kcc-deploy
 spec:
   ackDeadlineSeconds: 15
   messageRetentionDuration: 86400s
