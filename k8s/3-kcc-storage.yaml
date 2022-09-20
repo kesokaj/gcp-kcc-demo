@@ -9,7 +9,7 @@ metadata:
 spec:
   versioning:
     enabled: true
-  uniformBucketLevelAccess: true
+  uniformBucketLevelAccess: false
   location: eu
 ---
 apiVersion: storage.cnrm.cloud.google.com/v1beta1
