@@ -14,6 +14,10 @@ gcloud deploy targets rollback qsprod \
 
 kubectl delete -f k8s/
 
+kubectl get 
+iampolicymember,iamserviceaccount,pubsubtopic,pubsubsubscription,storagebucket,storagebucketaccesscontrol,storagenotification -n 
+kcc-deploy
+
 gcloud deploy apply --file clouddeploy.yaml --region=europe-north1 --project=gcp-asm-crfa-djq8kx
 
 gcloud deploy delivery-pipelines delete kcc-demo-pipeline --region europe-north1 --force
