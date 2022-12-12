@@ -5,18 +5,18 @@ metadata:
   name: kcc-demo-svc
   namespace: kcc-deploy
 spec:
-  member: serviceAccount:kcc-demo-svc@gcp-asm-crfa-djq8kx.iam.gserviceaccount.com
+  member: serviceAccount:kcc-demo-svc@<PROJECT_ID>.iam.gserviceaccount.com
   role: roles/owner
   resourceRef:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
-    external: projects/gcp-asm-crfa-djq8kx
+    external: projects/<PROJECT_ID>
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
   annotations:
-    cnrm.cloud.google.com/project-id: gcp-asm-crfa-djq8kx
+    cnrm.cloud.google.com/project-id: <PROJECT_ID>
   name: kcc-demo-svc
   namespace: kcc-deploy
 spec:

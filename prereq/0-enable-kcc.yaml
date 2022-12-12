@@ -8,4 +8,4 @@ metadata:
   name: configconnector.core.cnrm.cloud.google.com
 spec:
  mode: cluster
- googleServiceAccount: "cnrm-kcc@gcp-asm-crfa-djq8kx.iam.gserviceaccount.com"
+ googleServiceAccount: "cnrm-kcc@<PROJECT_ID>.iam.gserviceaccount.com"

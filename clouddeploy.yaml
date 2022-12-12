@@ -15,4 +15,4 @@ metadata:
  name: qsprod
 description: production cluster
 gke:
- cluster: projects/gcp-asm-crfa-djq8kx/locations/europe-north1/clusters/gcp-asm-crfa-djq8kx
+ cluster: projects/<PROJECT_ID>/locations/europe-north1/clusters/<CLUSTER_NAME>
