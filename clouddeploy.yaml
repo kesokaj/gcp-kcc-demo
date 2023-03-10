@@ -15,4 +15,4 @@ metadata:
  name: qsprod
 description: production cluster
 gke:
- cluster: projects/<PROJECT_ID>/locations/europe-north1/clusters/<CLUSTER_NAME>
+ cluster: projects/goog-renewing-grackle/locations/europe-north1-a/clusters/kcc

@@ -4,7 +4,7 @@ kind: StorageBucket
 metadata:
   annotations:
     cnrm.cloud.google.com/force-destroy: "true"
-  name: <PROJECT_ID>-kcc-demo
+  name: goog-renewing-grackle-kcc-demo
   namespace: kcc-deploy
 spec:
   versioning:
@@ -19,7 +19,7 @@ metadata:
   namespace: kcc-deploy
 spec:
   bucketRef:
-    name: <PROJECT_ID>-kcc-demo
+    name: goog-renewing-grackle-kcc-demo
   entity: allAuthenticatedUsers
   role: READER  
 ---
@@ -30,7 +30,7 @@ metadata:
   namespace: kcc-deploy
 spec:
   bucketRef:
-    name: <PROJECT_ID>-kcc-demo
+    name: goog-renewing-grackle-kcc-demo
   payloadFormat: JSON_API_V1
   topicRef:
     name: pubsub-kcc-demo
@@ -46,7 +46,7 @@ metadata:
   name: bucket-to-pubsub-policy
   namespace: kcc-deploy
 spec:
-  member: serviceAccount:service-799303310923@gs-project-accounts.iam.gserviceaccount.com
+  member: serviceAccount:service-317432507526@gs-project-accounts.iam.gserviceaccount.com
   role: roles/pubsub.publisher
   resourceRef:
     apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
